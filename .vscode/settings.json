@@ -1,0 +1,28 @@
+{
+  "cSpell.ignorePaths": [
+    "package-lock.json",
+    "node_modules",
+    "vscode-extension",
+    ".git/objects",
+    ".vscode",
+    ".vscode-insiders"
+  ],
+  "cSpell.words": [
+    "webui"
+  ],
+  "go.buildFlags": [
+    "-race"
+  ],
+  "go.lintFlags": [
+    "--fast",
+    "--fix"
+  ],
+  "go.lintOnSave": "package",
+  "go.testFlags": [
+    "-cover",
+    "-race"
+  ],
+  "material-icon-theme.folders.associations": {
+    "webui": "public"
+  }
+}
