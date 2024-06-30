@@ -23,6 +23,7 @@
     "-race"
   ],
   "material-icon-theme.folders.associations": {
-    "webui": "public"
+    "webui": "public",
+    "conn": "connection"
   }
 }
