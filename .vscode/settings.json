@@ -24,6 +24,6 @@
   ],
   "material-icon-theme.folders.associations": {
     "webui": "public",
-    "conn": "connection"
+    "conn": "connection",
   }
 }

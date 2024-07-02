@@ -1,4 +1,5 @@
 #!/bin/sh
 
-  golangci-lint --fix -v run
+  golangci-lint --fix -v run;
+  make protogen;
   # go test -v -race -cover ./...
