@@ -30,7 +30,19 @@ func NewInstance(server grpc.ServiceRegistrar, opts ...NewInstanceOption) *Insta
 		}
 	}
 
+	applyDefaultOpt(&i.opt)
+
 	pb.RegisterGreeterServer(server, &i)
 
 	return &i
+}
+
+func applyDefaultOpt(io *instanceOptions) {
+	defaultOpt := getDefaultOpt()
+	if io.name != "" {
+		io.name = defaultOpt.name
+	}
+	if io.logger != nil {
+		io.logger = defaultOpt.logger
+	}
 }

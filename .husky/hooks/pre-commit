@@ -2,4 +2,5 @@
 
   golangci-lint --fix -v run;
   make protogen;
+  gitleaks protect --verbose --redact --staged;
   # go test -v -race -cover ./...
