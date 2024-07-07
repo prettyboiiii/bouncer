@@ -2,7 +2,7 @@ PROTOC_GEN_GO = protoc-gen-go
 PROTOC_GEN_GRPC_GO = protoc-gen-go-grpc
 
 .PHONY: prepare
-prepare: install-deps protogen
+prepare: install-deps protogen tidy
 
 .PHONY: install-deps
 install-deps:
@@ -17,3 +17,7 @@ protogen:
 	protoc proto/*.proto --proto_path=./proto \
          --go_out=./proto --go_opt=module=github.com/prettyboiiii/bouncer/proto \
          --go-grpc_out=./proto --go-grpc_opt=module=github.com/prettyboiiii/bouncer/proto
+
+.PHONY: tidy
+tidy: 
+	go mod tidy

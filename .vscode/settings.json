@@ -8,6 +8,9 @@
     ".vscode-insiders"
   ],
   "cSpell.words": [
+    "durationpb",
+    "syncx",
+    "timestamppb",
     "webui"
   ],
   "go.buildFlags": [

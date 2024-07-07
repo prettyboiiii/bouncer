@@ -15,6 +15,8 @@ import (
 )
 
 func main() {
+	// TODO: Panic recovery handle
+	// TODO: Authentication
 	s := grpc.NewServer()
 	_ = bouncer.NewInstance(s)
 
@@ -24,8 +26,9 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
-	defer janitor.CheckClose(lis.Close, "listener")
+	defer janitor.CheckClose(lis, "listener")
 
+	// TODO: enable only for testing?
 	reflection.Register(s)
 
 	log.Printf("serving on port: %d", port)

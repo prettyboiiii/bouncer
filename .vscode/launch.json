@@ -11,7 +11,8 @@
       "mode": "debug",
       "program": "${workspaceFolder}/cmd/server/main.go",
       "envFile": "${workspaceFolder}/.env",
-      "preLaunchTask": "protogen"
+      "preLaunchTask": "protogen",
+      "console": "integratedTerminal"
     }
 
   ]

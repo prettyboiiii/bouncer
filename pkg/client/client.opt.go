@@ -1,8 +1,6 @@
 package client
 
 import (
-	"slices"
-
 	"google.golang.org/grpc"
 )
 
@@ -26,7 +24,7 @@ func (f *funcDialOption) apply(io *clientOptions) {
 // GRPCWrapper TODO: docs
 func GRPCWrapper(opts ...grpc.DialOption) Option {
 	return newFuncClientOption(func(co *clientOptions) {
-		slices.Concat(co.gRPCOpts, opts)
+		co.gRPCOpts = append(co.gRPCOpts, opts...)
 	})
 }
 

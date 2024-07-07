@@ -1,12 +1,15 @@
 // Package janitor TODO: docs
 package janitor
 
-import "log"
+import (
+	"io"
+	"log"
+)
 
 // CheckClose TODO: docs
-func CheckClose(fn func() error, name string) {
+func CheckClose(closer io.Closer, name string) {
 	log.Printf("closing %s", name)
-	if err := fn(); err != nil {
+	if err := closer.Close(); err != nil {
 		log.Fatalf("failed to close %s: %v", name, err)
 	}
 }

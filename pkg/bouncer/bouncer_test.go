@@ -32,13 +32,13 @@ func TestNewBouncer(t *testing.T) {
 	tests := []newBouncerTest{
 		{
 			name:   "normal",
-			expect: NewBouncer(&mockConn{}),
+			expect: NewBouncer(context.TODO(), &mockConn{}),
 		},
 	}
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			assert.Equal(t, test.expect, NewBouncer(&mockConn{}))
+			assert.Equal(t, test.expect, NewBouncer(context.TODO(), &mockConn{}))
 		})
 	}
 }
